@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/lib/bootstrap.min.css"
+              th:href="@{/resources/css/lib/bootstrap.min.css}"/>
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/lib/metisMenu.min.css"
+              th:href="@{/resources/css/lib/metisMenu.min.css}"/>
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/main.css"
+              th:href="@{/resources/css/main.css}"/>
+        <link rel="stylesheet" type="text/css" href="../../../resources/css/lib/font-awesome.min.css"
+              th:href="@{/resources/css/lib/font-awesome.min.css}"/>
+        <script src="../../../resources/js/lib/jquery.min.js"
+                th:src="@{/resources/js/lib/jquery.min.js}"></script>
+        <script src="../../../resources/js/lib/bootstrap.min.js"
+                th:src="@{/resources/js/lib/bootstrap.min.js}"></script>
+        <script src="../../../resources/js/lib/metisMenu.min.js"
+                th:src="@{/resources/js/lib/metisMenu.min.js}"></script>
+        <script src=".../../../resources/js/main.js" th:src="@{/resources/js/main.js}"></script>
+        <script src="../../../resources/js/lib/jquery.dataTables.min.js"
+                th:src="@{/resources/js/lib/jquery.dataTables.min.js}"></script>
+        <script src="../../../resources/js/lib/dataTables.bootstrap.min.js"
+                th:src="@{/resources/js/lib/dataTables.bootstrap.min.js}"></script>
+        <script src="../../../resources/js/lib/dataTables.responsive.js"
+                th:src="@{/resources/js/lib/dataTables.responsive.js}"></script>
+        <title>Pizza World :: Store</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="navbar" tiles:include="navbar"/>
+            <div id="page-wrapper">
+                <div id="body" tiles:include="body"/>
+            </div>
+        </div>
+    </body>
+</html>

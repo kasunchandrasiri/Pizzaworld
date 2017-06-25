@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.w3.org/1999/xhtml"
+      lang="en">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body tiles:fragment="content">
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header">New Store</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <form method="post" th:object="${updateStoreForm}"
+              th:action="@{/administrator/store/updateStore}">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h4> New Store Details</h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-primary  btn-sm pull-right btn-space"><i
+                                    class="fa fa-save fa-fw"></i>Save
+                            </button>
+                            <button type="reset" class="btn btn-default  btn-sm pull-right btn-space"><i
+                                    class="fa fa-undo fa-fw"></i>Reset
+                            </button>
+                            <a href="#" th:href="@{/administrator/store/storeList}"
+                               class="btn btn-default  btn-sm pull-right btn-space"><i class="fa fa-backward fa-fw"></i>Back</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+                                <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+                            </div>
+                            <div class="alert alert-danger" th:if="${errorMsg != null}">
+                                <p th:text="${errorMsg}"></p>
+                            </div>
+                            <div class="alert alert-success" th:if="${successMsg != null}">
+                                <p th:text="${successMsg}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input class="form-control" id="name" type="text"
+                                       placeholder="Name" th:field="*{name}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="streetNumber">Street Number</label>
+                                <input class="form-control" id="streetNumber" type="text"
+                                       placeholder="Street Number" th:field="*{streetNumber}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="product">Street</label>
+                                <select id="product" class="form-control" th:field="*{street}"
+                                        required="required">
+                                    <option value="">Please Select</option>
+                                    <option th:each="street : ${streetList}"
+                                            th:value="${street}"
+                                            th:text="${street.value}"/>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <select id="city" class="form-control" th:field="*{city}"
+                                        required="required">
+                                    <option value="">Please Select</option>
+                                    <option th:each="city : ${cityList}"
+                                            th:value="${city}"
+                                            th:text="${city.value}"/>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="postCode">Postcode</label>
+                                <select id="postCode" class="form-control" th:field="*{postCode}"
+                                        required="required">
+                                    <option value="">Please Select</option>
+                                    <option th:each="postCode : ${postCodeList}"
+                                            th:value="${postCode}"
+                                            th:text="${postCode.value}"/>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select id="status" class="form-control" th:field="*{status}"
+                                        required="required">
+                                    <option value="">Please Select</option>
+                                    <option th:each="storeStatus : ${storeStatusList}"
+                                            th:value="${storeStatus}"
+                                            th:text="${storeStatus.value}"/>
+                                </select>
+                            </div>
+                            <input type="hidden" id="id" th:field="*{id}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
