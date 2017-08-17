@@ -1,6 +1,6 @@
 # Pizzaworld
 
--Appliction design for pizza resturant chain which have 3 main business modules.
+- Appliction design for pizza resturant chain which have 3 main business modules.
   > - Online Ordering
   > - In-store 
   > - Central Admin Server 
