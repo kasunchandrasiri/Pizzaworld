@@ -5,7 +5,7 @@
   > - In-store 
   > - Central Admin Server 
   
-- The Appliction stuctured and configured to continue thedevelopment on above mentioned areas.
+- The Appliction stuctured and configured to continue the development on above mentioned areas.
 
 - Currently working functions
   > - Login to central server
